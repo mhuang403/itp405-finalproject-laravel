@@ -55,9 +55,9 @@ class WineController extends Controller
 //                ->orderBy('wine_id')
 //                ->get();
 
-        $wine = DB::table('wine_list')
-            ->orderBy('wine_id')
-            ->get();
+//        $wine = DB::table('wine_list')
+//            ->orderBy('wine_id')
+//            ->get();
 
 //        $results = DB::table('wine_list')
 //            ->leftjoin('grapes', 'wine_list.grape_id', '=', 'grapes.grape_id')
@@ -363,7 +363,7 @@ class WineController extends Controller
                         'grape_id' => request('grape')
                     ]);
 
-            return redirect('/winelist/results')
+            return redirect('/winelist/results?name=&grape_id=all&year=&wine_type_id=all&country_id=all&price=')
                 ->with('successStatus', 'Wine was updated successfully');
 
         } else {
@@ -416,7 +416,7 @@ class WineController extends Controller
                         'grape_id' => request('grape')
                     ]);
 
-            return redirect('/winelist/results')
+            return redirect('/winelist/results?name=&grape_id=all&year=&wine_type_id=all&country_id=all&price=')
                 ->with('successStatus', 'Wine was added successfully');
 
         } else {
@@ -433,7 +433,7 @@ class WineController extends Controller
         $wine = Wine::find($id);
         $wine->delete();
 
-        return redirect('/winelist/results')
+        return redirect('/winelist/results?name=&grape_id=all&year=&wine_type_id=all&country_id=all&price=')
             ->with('successStatus', 'Wine was successfully deleted');
     }
 

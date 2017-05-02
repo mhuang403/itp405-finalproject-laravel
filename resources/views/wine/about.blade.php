@@ -112,6 +112,11 @@
     }
 
     /* Position the "next button" to the right */
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
     .next {
         right: 0;
         border-radius: 3px 0 0 3px;
